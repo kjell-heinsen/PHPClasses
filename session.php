@@ -1,5 +1,5 @@
 <?php
-namespace core\main;
+namespace app\core;
 
 class Session {
 
