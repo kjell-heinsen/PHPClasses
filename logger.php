@@ -1,6 +1,4 @@
 <?php
-namespace app\core;
-
 class Logger {
 
    private static $print_error = false;
