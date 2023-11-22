@@ -58,7 +58,7 @@ class csrf {
      *
      *  AND THIS:
      *  <script type="text/javascript">
-     * // This adds the csrf Token automaticly to all your ajax Posts
+     *   // This adds the csrf Token automaticly to all your ajax Posts
      *  $.ajaxPrefilter(function(options, originalOptions, jqXHR){
      *   if(options.type.toLowerCase() === "post"){
      *
@@ -97,6 +97,21 @@ class csrf {
      *     // Handle the Exception
      *     $errormessage = htmlspecialchars($e->getMessage());
      *   }
+     *
+     *  Example for csrf json Endpoint:
+     *
+     *
+     *
+     *  header('Content-Type: application/json');
+     *  if(login::isaktiv()){
+     *  $data['status'] = 'ok';
+     *  $data['message'] = '';
+     *  $data['token'] = $_SESSION['csrf_token'];
+     *  } else {
+     *  $data['status'] = 'fail';
+     *  $data['message'] = 'Keine aktive Session';
+     * }
+     *  echo json_encode($data);
      *
      *
      */
